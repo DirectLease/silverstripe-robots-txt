@@ -3,7 +3,8 @@
 namespace Odorisioe\SilverStripe\RobotsTxt\Dev;
 
 use SilverStripe\Dev\DevBuildController;
-
+use SilverStripe\Control\HTTPRequest;
+use SilverStripe\Control\HTTPResponse;
 /**
  *
  *
@@ -25,11 +26,12 @@ class DevBuildExtension extends DevBuildController
    *
    *
    */
-  public function build($request)
+  public function build(HTTPRequest $request): HTTPResponse
   {
     echo 'custom build';die;
     //do stuff before the build
-    parent::build($request);
+    return parent::build($request);
     //do stuff after the build
   }
+
 }
